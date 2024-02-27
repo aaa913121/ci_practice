@@ -39,30 +39,8 @@ services:
       POSTGRES_USER: "gitlab"
       POSTGRES_PASSWORD: "gitlab"
       PGDATA: "/data"
-      POSTGRES_DB:
-        "gitlab"
+      POSTGRES_DB: "gitlab"
 
-        #  grafana:
-        # image: grafana/grafana:latest
-        #environment:
-        #GF_PATHS_CONFIG: "/grafana.ini"
-        #configs:
-        #- grafana.ini
-        #volumes:
-        #- "grafana_data:/data"
-        #networks:
-        #- default
-        #- traefik-public
-        #deploy:
-        #labels:
-        #- traefik.enable=true
-        #- traefik.docker.network=traefik-public
-        #- traefik.constraint-label=traefik-public
-        #- traefik.http.routers.grafana.rule=Host(`grafana.${DOMAIN?Variable not set}`)
-        #- traefik.http.routers.grafana.entrypoints=https
-        #- traefik.http.routers.grafana.tls=true
-        #- traefik.http.routers.grafana.tls.certresolver=le
-        #        - traefik.http.services.grafana.loadbalancer.server.port=3000
 volumes:
   gitlab_data:
     driver: local
