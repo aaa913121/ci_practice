@@ -2,7 +2,7 @@ external_url 'https://gitlab.nolin.cc'
 letsencrypt['enable'] = false
 
 # backup settings
-gitlab_rails['backup_path'] = 'srv/gitlab-swarm/backup'
+gitlab_rails['backup_path'] = 'srv/gitlab/backup'
 gitlab_rails['backup_archive_permissions'] = 0644
 gitlab_rails['backup_keep_time'] = 604800
 
