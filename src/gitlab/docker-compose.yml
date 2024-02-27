@@ -69,7 +69,7 @@ volumes:
 
 configs:
   gitlab.rb:
-    file: "./gitlab.rb"
+    file: "gitlab.rb"
 
 networks:
   proxy:
