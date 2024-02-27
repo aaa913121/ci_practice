@@ -47,25 +47,25 @@ volumes:
     driver_opts:
       type: nfs4
       o: "addr=127.0.0.1"
-      device: ":/gitlab/gitlab/data"
+      device: ":./gitlab/data"
   gitlab_logs:
     driver: local
     driver_opts:
       type: nfs4
       o: "addr=127.0.0.1"
-      device: ":/gitlab/gitlab/logs"
+      device: ":./gitlab/logs"
   gitlab_config:
     driver: local
     driver_opts:
       type: nfs4
       o: "addr=127.0.0.1"
-      device: ":/gitlab/gitlab/config"
+      device: ":./gitlab/config"
   postgres_data:
     driver: local
     driver_opts:
       type: nfs4
       o: "addr=127.0.0.1"
-      device: ":/gitlab/postgres"
+      device: ":./postgres"
 
 configs:
   gitlab.rb:
