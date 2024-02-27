@@ -66,18 +66,10 @@ volumes:
       type: nfs4
       o: "addr=127.0.0.1"
       device: ":/gitlab-swarm/postgres"
-  grafana_data:
-    driver: local
-    driver_opts:
-      type: nfs4
-      o: "addr=127.0.0.1"
-      device: ":/gitlab-swarm/grafana"
 
 configs:
   gitlab.rb:
     file: "./gitlab.rb"
-  grafana.ini:
-    file: "./grafana.ini"
 
 networks:
   net:
