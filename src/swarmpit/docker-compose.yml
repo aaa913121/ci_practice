@@ -15,7 +15,7 @@ services:
       retries: 3
     networks:
       - net
-      - traefik-public
+      - proxy
     deploy:
       resources:
         limits:
@@ -29,8 +29,8 @@ services:
           - node.role == manager
       labels:
         - traefik.enable=true
-        - traefik.docker.network=traefik-public
-        - traefik.constraint-label=traefik-public
+        - traefik.docker.network=proxy
+        - traefik.constraint-label=proxy
         # Uses the environment variable DOMAIN
         - traefik.http.routers.swarmpit.rule=Host(`swarmpit.${DOMAIN?Variable not set}`)
         - traefik.http.routers.swarmpit.entrypoints=https
@@ -90,7 +90,7 @@ services:
 networks:
   net:
     driver: overlay
-  traefik-public:
+  proxy:
     external: true
 
 volumes:

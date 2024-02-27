@@ -9,15 +9,15 @@ services:
       - "gitlab_config:/etc/gitlab"
     networks:
       - default
-      - traefik-public
+      - proxy
     configs:
       - source: gitlab.rb
         target: /etc/gitlab/gitlab.rb
     deploy:
       labels:
         - traefik.enable=true
-        - traefik.docker.network=traefik-public
-        - traefik.constraint-label=traefik-public
+        - traefik.docker.network=proxy
+        - traefik.constraint-label=proxy
         # Uses the environment variable DOMAIN
         - traefik.http.routers.gitlab.rule=Host(`gitlab.${DOMAIN?Variable not set}`)
         - traefik.http.routers.gitlab.entrypoints=https
@@ -82,5 +82,5 @@ configs:
 networks:
   net:
     driver: overlay
-  traefik-public:
+  proxy:
     external: true
