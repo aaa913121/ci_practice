@@ -72,7 +72,5 @@ configs:
     file: "./gitlab.rb"
 
 networks:
-  default:
-    driver: overlay
   proxy:
     external: true
