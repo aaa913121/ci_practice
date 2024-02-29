@@ -1,4 +1,4 @@
-external_url 'https://gitlab.nolin.cc'
+# external_url 'https://gitlab.nolin.cc'
 letsencrypt['enable'] = false
 
 # Needed to let gitlab work behind traefik
@@ -18,10 +18,10 @@ redis_exporter['enable'] = false
 
 # Postgres settings
 gitlab_rails['db_adapter'] = "postgresql"
-gitlab_rails['db_encoding'] = "unicode"
+gitlab_rails['db_encoding'] = "utf8"
 
-# database service will be named "postgres" in the stack
-gitlab_rails['db_host'] = "postgres" 
+# database service will be named "postgresql" in the stack
+gitlab_rails['db_host'] = "postgresql" 
 gitlab_rails['db_database'] = "gitlab"
 gitlab_rails['db_username'] = "gitlab"
 gitlab_rails['db_password'] = "gitlab"

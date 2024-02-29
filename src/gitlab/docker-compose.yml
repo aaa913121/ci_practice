@@ -11,7 +11,7 @@ services:
       - "./logs:/var/log/gitlab"
       - "./config:/etc/gitlab"
     networks:
-      - default
+      - net
       - proxy
     configs:
       - source: gitlab.rb
@@ -38,12 +38,12 @@ services:
   redis:
     image: "redis:alpine3.19"
     networks:
-      - default
+      - net
 
   postgresql:
     image: "postgres:alpine3.19"
     networks:
-      - default
+      - net
     volumes:
       - "postgres_data:/data"
     environment:
@@ -85,5 +85,5 @@ configs:
 networks:
   proxy:
     external: true
-  default:
+  net:
     driver: overlay
