@@ -29,12 +29,12 @@ services:
         # - traefik.http.routers.gitlab.tls.certresolver=le
         # Enable HTTP Basic auth, using the middleware created above
         # - traefik.http.routers.gitlab.middlewares=admin-auth
-        - traefik.http.services.gitlab.loadbalancer.server.port=443
+        # - traefik.http.services.gitlab.loadbalancer.server.port=443
         - traefik.http.services.gitlab.loadbalancer.server.scheme=https
         - traefik.http.routers.gitlab.entrypoints=websecure
         - traefik.http.routers.gitlab.service=gitlab
         - traefik.http.routers.gitlab.tls.certresolver=letsencryptresolver
-        # - traefik.http.services.gitlab.loadbalancer.server.port=80
+        - traefik.http.services.gitlab.loadbalancer.server.port=80
   redis:
     image: "redis:alpine3.19"
     networks:

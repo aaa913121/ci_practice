@@ -1,6 +1,10 @@
 external_url 'https://gitlab.nolin.cc'
 letsencrypt['enable'] = false
 
+# Needed to let gitlab work behind traefik
+nginx['listen_https'] = false
+nginx['listen_port'] = 80
+
 # backup settings
 gitlab_rails['backup_path'] = 'srv/gitlab/backup'
 gitlab_rails['backup_archive_permissions'] = 0644
