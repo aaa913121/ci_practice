@@ -29,3 +29,6 @@ gitlab_rails['db_password'] = "gitlab"
 # Redis settings
 # redis service will be named "redis" in the stack
 gitlab_rails['redis_host'] = "redis"
+
+puma['worker_processes'] = 0
+
