@@ -45,9 +45,7 @@ services:
     networks:
       - net
     volumes:
-      - "postgres_data:/data"
-      - ./postgresql.conf:/etc/postgresql/postgresql.conf
-      - ./postgresql.conf:/var/lib/postgresql/data/postgresql.conf
+      - "postgres_data:/var/lib/postgresql/data"
     environment:
       POSTGRES_USER: "gitlab"
       POSTGRES_PASSWORD: "gitlab"
