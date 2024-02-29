@@ -40,7 +40,7 @@ services:
     networks:
       - default
 
-  postgres:
+  postgresql:
     image: "postgres:alpine3.19"
     networks:
       - default
