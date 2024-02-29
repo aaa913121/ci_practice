@@ -46,6 +46,8 @@ services:
       - net
     volumes:
       - "postgres_data:/data"
+      - ./postgresql.conf:/etc/postgresql/postgresql.conf
+      - ./postgresql.conf:/var/lib/postgresql/data/postgresql.conf
     environment:
       POSTGRES_USER: "gitlab"
       POSTGRES_PASSWORD: "gitlab"
@@ -53,7 +55,7 @@ services:
       POSTGRES_DB: "gitlab"
 
   pgadmin:
-    image: "dpage/pgadmin4"
+    image: dpage/pgadmin4:latest
     networks:
       - net
       - proxy
@@ -78,24 +80,6 @@ services:
         # - traefik.http.routers.pgadmin.middlewares=admin-auth
         - traefik.http.services.pgadmin.loadbalancer.server.port=80
 volumes:
-  # gitlab_data:
-  #   driver: local
-  #   driver_opts:
-  #     type: nfs4
-  #     o: "addr=127.0.0.1"
-  #     device: ":/gitlab/data"
-  # gitlab_logs:
-  #   driver: local
-  #   driver_opts:
-  #     type: nfs4
-  #     o: "addr=127.0.0.1"
-  #     device: ":/gitlab/logs"
-  # gitlab_config:
-  #   driver: local
-  #   driver_opts:
-  #     type: nfs4
-  #     o: "addr=127.0.0.1"
-  #     device: ":/gitlab/config"
   postgres_data:
     driver: local
   pgadmin-data:
