@@ -7,9 +7,9 @@ services:
       # - "gitlab_data:/var/opt/gitlab"
       # - "gitlab_logs:/var/log/gitlab"
       # - "gitlab_config:/etc/gitlab"
-      - "./gitlab/data:/var/opt/gitlab"
-      - "./gitlab/logs:/var/log/gitlab"
-      - "./gitlab/config:/etc/gitlab"
+      - "./data:/var/opt/gitlab"
+      - "./logs:/var/log/gitlab"
+      - "./config:/etc/gitlab"
     networks:
       - default
       - proxy
