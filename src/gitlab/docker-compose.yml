@@ -16,9 +16,6 @@ services:
     configs:
       - source: gitlab.rb
         target: /etc/gitlab/gitlab.rb
-    links:
-      - redis
-      - postgresql
     deploy:
       labels:
         - traefik.enable=true
@@ -65,8 +62,6 @@ services:
       PGADMIN_DEFAULT_PASSWORD: ${PASSWORD?Variable not set}
     volumes:
       - pgadmin-data:/var/lib/pgadmin
-    links:
-      - postgresql
     deploy:
       labels:
         - traefik.enable=true
