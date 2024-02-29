@@ -4,9 +4,12 @@ services:
   gitlab:
     image: gitlab/gitlab-ce:latest
     volumes:
-      - "gitlab_data:/var/opt/gitlab"
-      - "gitlab_logs:/var/log/gitlab"
-      - "gitlab_config:/etc/gitlab"
+      # - "gitlab_data:/var/opt/gitlab"
+      # - "gitlab_logs:/var/log/gitlab"
+      # - "gitlab_config:/etc/gitlab"
+      - "./gitlab/data:/var/opt/gitlab"
+      - "./gitlab/logs:/var/log/gitlab"
+      - "./gitlab/config:/etc/gitlab"
     networks:
       - default
       - proxy
@@ -42,24 +45,24 @@ services:
       POSTGRES_DB: "gitlab"
 
 volumes:
-  gitlab_data:
-    driver: local
-    driver_opts:
-      type: nfs4
-      o: "addr=127.0.0.1"
-      device: ":/gitlab/data"
-  gitlab_logs:
-    driver: local
-    driver_opts:
-      type: nfs4
-      o: "addr=127.0.0.1"
-      device: ":/gitlab/logs"
-  gitlab_config:
-    driver: local
-    driver_opts:
-      type: nfs4
-      o: "addr=127.0.0.1"
-      device: ":/gitlab/config"
+  # gitlab_data:
+  #   driver: local
+  #   driver_opts:
+  #     type: nfs4
+  #     o: "addr=127.0.0.1"
+  #     device: ":/gitlab/data"
+  # gitlab_logs:
+  #   driver: local
+  #   driver_opts:
+  #     type: nfs4
+  #     o: "addr=127.0.0.1"
+  #     device: ":/gitlab/logs"
+  # gitlab_config:
+  #   driver: local
+  #   driver_opts:
+  #     type: nfs4
+  #     o: "addr=127.0.0.1"
+  #     device: ":/gitlab/config"
   postgres_data:
     driver: local
     driver_opts:
