@@ -21,7 +21,7 @@ gitlab_rails['db_adapter'] = "postgresql"
 gitlab_rails['db_encoding'] = "utf8"
 
 # database service will be named "postgresql" in the stack
-gitlab_rails['db_host'] = "postgresql" 
+gitlab_rails['db_host'] = '/var/run/postgresql/'
 gitlab_rails['db_database'] = "gitlab"
 gitlab_rails['db_username'] = "gitlab"
 gitlab_rails['db_password'] = "gitlab"

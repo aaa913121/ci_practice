@@ -1,7 +1,0 @@
-providers:
-  swarm:
-    endpoint: "unix:///var/run/docker.sock"
-    network: proxy
-    refreshSeconds: 30
-api:
-  dashboard: true
