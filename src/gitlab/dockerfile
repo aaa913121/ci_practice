@@ -1,0 +1,8 @@
+FROM gitlab/gitlab-ce:latest
+
+# Add any additional setup or configurations here
+# Example:
+# COPY custom-config-file /path/to/config-file
+# RUN some-command
+RUN gitlab-ctl reconfigure;\
+    gitlab-ctl restart
