@@ -40,6 +40,8 @@ services:
       - REGISTRY_AUTH_TOKEN_ISSUER=gitlab-issuer
       - REGISTRY_AUTH_TOKEN_ROOTCERTBUNDLE=/certs/registry.crt
       - REGISTRY_STORAGE_DELETE_ENABLED=true
+      - REGISTRY_HTTP_SECRET=secretstring
+      - REGISTRY_STORAGE_CACHE_BLOBDESCRIPTOR=redis
     deploy:
       placement:
         constraints:
