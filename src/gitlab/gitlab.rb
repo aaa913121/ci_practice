@@ -1,5 +1,5 @@
 # external_url 'https://gitlab.nolin.cc'
-letsencrypt['enable'] = false
+# letsencrypt['enable'] = false
 
 # Needed to let gitlab work behind traefik
 nginx['listen_https'] = false

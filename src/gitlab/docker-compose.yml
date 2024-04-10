@@ -3,8 +3,6 @@ version: "3.8"
 services:
   gitlab:
     image: gitlab/gitlab-ce:latest
-    build:
-      context: .
     volumes:
       - "./data:/var/opt/gitlab"
       - "./logs:/var/log/gitlab"
