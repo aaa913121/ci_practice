@@ -28,7 +28,7 @@ services:
   pgadmin:
     image: dpage/pgadmin4:latest
     networks:
-      - net
+      - default
       - proxy
     environment:
       PGADMIN_DEFAULT_EMAIL: ${EMAIL?Variable not set}
